@@ -1,0 +1,33 @@
+{
+  "name": "@workspace/email",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./pipeline": "./src/pipeline.ts",
+    "./adapters/gmail": "./src/adapters/gmail.ts",
+    "./adapters/outlook": "./src/adapters/outlook.ts",
+    "./adapters/imap": "./src/adapters/imap.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^2.16.2",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "@workspace/ai": "workspace:*",
+    "@workspace/core": "workspace:*",
+    "@workspace/db": "workspace:*",
+    "@workspace/storage": "workspace:*",
+    "drizzle-orm": "^0.38.3",
+    "googleapis": "^144.0.0",
+    "imapflow": "^1.0.188",
+    "mailparser": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/mailparser": "^3.4.5",
+    "@workspace/typescript-config": "workspace:*",
+    "typescript": "^5.9.3"
+  }
+}

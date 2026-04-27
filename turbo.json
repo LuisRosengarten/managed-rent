@@ -1,6 +1,22 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
+  "globalEnv": [
+    "NODE_ENV",
+    "DATABASE_URL",
+    "APP_ENCRYPTION_KEY",
+    "BETTER_AUTH_SECRET",
+    "BETTER_AUTH_URL",
+    "UPLOADTHING_TOKEN",
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET",
+    "GOOGLE_REDIRECT_URI",
+    "MICROSOFT_CLIENT_ID",
+    "MICROSOFT_CLIENT_SECRET",
+    "MICROSOFT_REDIRECT_URI",
+    "DEFAULT_AI_PROVIDER"
+  ],
+  "globalPassThroughEnv": ["PATH", "HOME", "SHELL"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -17,6 +33,20 @@
       "dependsOn": ["^typecheck"]
     },
     "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false,
+      "interactive": true
+    },
+    "db:studio": {
       "cache": false,
       "persistent": true
     }

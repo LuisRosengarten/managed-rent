@@ -1,0 +1,26 @@
+{
+  "name": "@workspace/ai",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./classify": "./src/classify.ts",
+    "./extract": "./src/extract.ts",
+    "./dedupe": "./src/dedupe.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.1",
+    "@google/genai": "^0.7.0",
+    "@workspace/core": "workspace:*",
+    "openai": "^4.77.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@workspace/typescript-config": "workspace:*",
+    "typescript": "^5.9.3"
+  }
+}

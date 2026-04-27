@@ -1,0 +1,26 @@
+{
+  "name": "@workspace/storage",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./router": "./src/router.ts",
+    "./client": "./src/client.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@workspace/auth": "workspace:*",
+    "uploadthing": "^7.4.4"
+  },
+  "peerDependencies": {
+    "next": "^16.0.0"
+  },
+  "devDependencies": {
+    "@workspace/typescript-config": "workspace:*",
+    "next": "^16.1.6",
+    "typescript": "^5.9.3"
+  }
+}

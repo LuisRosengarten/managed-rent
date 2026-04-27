@@ -3,15 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "turbo format",
-    "typecheck": "turbo typecheck"
+    "build": "dotenv -e .env -- turbo build",
+    "dev": "dotenv -e .env -- turbo dev",
+    "lint": "dotenv -e .env -- turbo lint",
+    "format": "dotenv -e .env -- turbo format",
+    "typecheck": "dotenv -e .env -- turbo typecheck",
+    "db:generate": "dotenv -e .env -- turbo db:generate",
+    "db:migrate": "dotenv -e .env -- turbo db:migrate",
+    "db:push": "dotenv -e .env -- turbo db:push",
+    "db:studio": "dotenv -e .env -- turbo db:studio"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
+    "dotenv-cli": "^11.0.0",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "turbo": "^2.8.17",
